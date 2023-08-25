@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1888AD1BA18FA6A63DA70033 /* Pods_grinta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F837A9090903F23E7DEF2ADD /* Pods_grinta.framework */; };
+		28C533C0287C581B9A103E0A /* Pods_grintaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B520EB586E905B26DD518079 /* Pods_grintaTests.framework */; };
 		47FF3D4E2A98AC14009EB5F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D4D2A98AC14009EB5F6 /* AppDelegate.swift */; };
 		47FF3D502A98AC14009EB5F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D4F2A98AC14009EB5F6 /* SceneDelegate.swift */; };
 		47FF3D522A98AC14009EB5F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D512A98AC14009EB5F6 /* ViewController.swift */; };
@@ -17,6 +19,16 @@
 		47FF3D682A98AC17009EB5F6 /* grintaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D672A98AC17009EB5F6 /* grintaTests.swift */; };
 		47FF3D722A98AC17009EB5F6 /* grintaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D712A98AC17009EB5F6 /* grintaUITests.swift */; };
 		47FF3D742A98AC17009EB5F6 /* grintaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D732A98AC17009EB5F6 /* grintaUITestsLaunchTests.swift */; };
+		47FF3D872A98B770009EB5F6 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D862A98B770009EB5F6 /* AppConfiguration.swift */; };
+		47FF3D892A98B8E4009EB5F6 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D882A98B8E4009EB5F6 /* NetworkConstants.swift */; };
+		47FF3D8B2A98BB40009EB5F6 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D8A2A98BB40009EB5F6 /* BaseAPI.swift */; };
+		47FF3D8D2A98BB51009EB5F6 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D8C2A98BB51009EB5F6 /* NetworkRouter.swift */; };
+		47FF3D912A98BD69009EB5F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D902A98BD69009EB5F6 /* NetworkManager.swift */; };
+		47FF3D932A98C338009EB5F6 /* NetworkRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D922A98C338009EB5F6 /* NetworkRemoteDataSource.swift */; };
+		47FF3D952A98C4A3009EB5F6 /* ResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D942A98C4A3009EB5F6 /* ResponseDataModel.swift */; };
+		47FF3D972A98DCC0009EB5F6 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D962A98DCC0009EB5F6 /* BaseRouter.swift */; };
+		47FF3D992A98DEC7009EB5F6 /* MatchesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D982A98DEC7009EB5F6 /* MatchesRepository.swift */; };
+		549C55C2B32C1B1FBE9E4367 /* Pods_grinta_grintaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AD84C41ED267BE5A1640664 /* Pods-grintaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grintaTests.release.xcconfig"; path = "Target Support Files/Pods-grintaTests/Pods-grintaTests.release.xcconfig"; sourceTree = "<group>"; };
+		0FCE8B1B11591B42A14FBDBF /* Pods-grinta-grintaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grinta-grintaUITests.release.xcconfig"; path = "Target Support Files/Pods-grinta-grintaUITests/Pods-grinta-grintaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		180006F12FF31268600506AD /* Pods-grinta-grintaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grinta-grintaUITests.debug.xcconfig"; path = "Target Support Files/Pods-grinta-grintaUITests/Pods-grinta-grintaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		339FDC0653379AFED4E5CA05 /* Pods-grinta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grinta.debug.xcconfig"; path = "Target Support Files/Pods-grinta/Pods-grinta.debug.xcconfig"; sourceTree = "<group>"; };
 		47FF3D4A2A98AC14009EB5F6 /* grinta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grinta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47FF3D4D2A98AC14009EB5F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47FF3D4F2A98AC14009EB5F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +67,20 @@
 		47FF3D6D2A98AC17009EB5F6 /* grintaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = grintaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47FF3D712A98AC17009EB5F6 /* grintaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grintaUITests.swift; sourceTree = "<group>"; };
 		47FF3D732A98AC17009EB5F6 /* grintaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grintaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		47FF3D862A98B770009EB5F6 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		47FF3D882A98B8E4009EB5F6 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		47FF3D8A2A98BB40009EB5F6 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		47FF3D8C2A98BB51009EB5F6 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		47FF3D902A98BD69009EB5F6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		47FF3D922A98C338009EB5F6 /* NetworkRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRemoteDataSource.swift; sourceTree = "<group>"; };
+		47FF3D942A98C4A3009EB5F6 /* ResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataModel.swift; sourceTree = "<group>"; };
+		47FF3D962A98DCC0009EB5F6 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		47FF3D982A98DEC7009EB5F6 /* MatchesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepository.swift; sourceTree = "<group>"; };
+		9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grinta_grintaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2048943073624426CCF63DC /* Pods-grintaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grintaTests.debug.xcconfig"; path = "Target Support Files/Pods-grintaTests/Pods-grintaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B520EB586E905B26DD518079 /* Pods_grintaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grintaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB377BEE5899D432267C65A /* Pods-grinta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grinta.release.xcconfig"; path = "Target Support Files/Pods-grinta/Pods-grinta.release.xcconfig"; sourceTree = "<group>"; };
+		F837A9090903F23E7DEF2ADD /* Pods_grinta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grinta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1888AD1BA18FA6A63DA70033 /* Pods_grinta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C533C0287C581B9A103E0A /* Pods_grintaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +104,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549C55C2B32C1B1FBE9E4367 /* Pods_grinta_grintaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BB12076F30F2D02B394C33F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				339FDC0653379AFED4E5CA05 /* Pods-grinta.debug.xcconfig */,
+				CAB377BEE5899D432267C65A /* Pods-grinta.release.xcconfig */,
+				180006F12FF31268600506AD /* Pods-grinta-grintaUITests.debug.xcconfig */,
+				0FCE8B1B11591B42A14FBDBF /* Pods-grinta-grintaUITests.release.xcconfig */,
+				B2048943073624426CCF63DC /* Pods-grintaTests.debug.xcconfig */,
+				0AD84C41ED267BE5A1640664 /* Pods-grintaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		37A7744168B0ED1AB64B1255 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F837A9090903F23E7DEF2ADD /* Pods_grinta.framework */,
+				9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */,
+				B520EB586E905B26DD518079 /* Pods_grintaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		47FF3D412A98AC14009EB5F6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +141,8 @@
 				47FF3D662A98AC17009EB5F6 /* grintaTests */,
 				47FF3D702A98AC17009EB5F6 /* grintaUITests */,
 				47FF3D4B2A98AC14009EB5F6 /* Products */,
+				2BB12076F30F2D02B394C33F /* Pods */,
+				37A7744168B0ED1AB64B1255 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				47FF3D812A98B00F009EB5F6 /* NetworkLayer */,
+				47FF3D8E2A98BD40009EB5F6 /* Global */,
 				47FF3D832A98B026009EB5F6 /* Modules */,
 				47FF3D822A98B01C009EB5F6 /* Models */,
-				47FF3D512A98AC14009EB5F6 /* ViewController.swift */,
-				47FF3D532A98AC14009EB5F6 /* Main.storyboard */,
 				47FF3D5B2A98AC16009EB5F6 /* LaunchScreen.storyboard */,
 				47FF3D5E2A98AC16009EB5F6 /* Info.plist */,
 				47FF3D562A98AC14009EB5F6 /* grinta.xcdatamodeld */,
@@ -136,6 +193,7 @@
 			children = (
 				47FF3D4D2A98AC14009EB5F6 /* AppDelegate.swift */,
 				47FF3D4F2A98AC14009EB5F6 /* SceneDelegate.swift */,
+				47FF3D862A98B770009EB5F6 /* AppConfiguration.swift */,
 				47FF3D592A98AC16009EB5F6 /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
@@ -146,6 +204,10 @@
 			children = (
 				47FF3D842A98B15E009EB5F6 /* Remote */,
 				47FF3D852A98B167009EB5F6 /* Local */,
+				47FF3D882A98B8E4009EB5F6 /* NetworkConstants.swift */,
+				47FF3D8A2A98BB40009EB5F6 /* BaseAPI.swift */,
+				47FF3D962A98DCC0009EB5F6 /* BaseRouter.swift */,
+				47FF3D982A98DEC7009EB5F6 /* MatchesRepository.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -153,6 +215,7 @@
 		47FF3D822A98B01C009EB5F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				47FF3D942A98C4A3009EB5F6 /* ResponseDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +223,8 @@
 		47FF3D832A98B026009EB5F6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				47FF3D512A98AC14009EB5F6 /* ViewController.swift */,
+				47FF3D532A98AC14009EB5F6 /* Main.storyboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -167,6 +232,8 @@
 		47FF3D842A98B15E009EB5F6 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				47FF3D8C2A98BB51009EB5F6 /* NetworkRouter.swift */,
+				47FF3D922A98C338009EB5F6 /* NetworkRemoteDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -178,6 +245,22 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		47FF3D8E2A98BD40009EB5F6 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				47FF3D8F2A98BD52009EB5F6 /* Managers */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		47FF3D8F2A98BD52009EB5F6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				47FF3D902A98BD69009EB5F6 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47FF3D772A98AC17009EB5F6 /* Build configuration list for PBXNativeTarget "grinta" */;
 			buildPhases = (
+				AC4EE7C201E3D2D6C9BEE68A /* [CP] Check Pods Manifest.lock */,
 				47FF3D462A98AC14009EB5F6 /* Sources */,
 				47FF3D472A98AC14009EB5F6 /* Frameworks */,
 				47FF3D482A98AC14009EB5F6 /* Resources */,
+				EF97969BF06CA1743E500BAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47FF3D7A2A98AC17009EB5F6 /* Build configuration list for PBXNativeTarget "grintaTests" */;
 			buildPhases = (
+				C920A7E191894F8A856837AD /* [CP] Check Pods Manifest.lock */,
 				47FF3D5F2A98AC17009EB5F6 /* Sources */,
 				47FF3D602A98AC17009EB5F6 /* Frameworks */,
 				47FF3D612A98AC17009EB5F6 /* Resources */,
@@ -220,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47FF3D7D2A98AC17009EB5F6 /* Build configuration list for PBXNativeTarget "grintaUITests" */;
 			buildPhases = (
+				6A781732C7F299D39A089583 /* [CP] Check Pods Manifest.lock */,
 				47FF3D692A98AC17009EB5F6 /* Sources */,
 				47FF3D6A2A98AC17009EB5F6 /* Frameworks */,
 				47FF3D6B2A98AC17009EB5F6 /* Resources */,
+				B37F6E739DC83190BDAA7FC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,14 +392,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A781732C7F299D39A089583 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-grinta-grintaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC4EE7C201E3D2D6C9BEE68A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-grinta-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B37F6E739DC83190BDAA7FC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-grinta-grintaUITests/Pods-grinta-grintaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-grinta-grintaUITests/Pods-grinta-grintaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-grinta-grintaUITests/Pods-grinta-grintaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C920A7E191894F8A856837AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-grintaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF97969BF06CA1743E500BAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-grinta/Pods-grinta-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-grinta/Pods-grinta-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-grinta/Pods-grinta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		47FF3D462A98AC14009EB5F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FF3D912A98BD69009EB5F6 /* NetworkManager.swift in Sources */,
+				47FF3D892A98B8E4009EB5F6 /* NetworkConstants.swift in Sources */,
+				47FF3D952A98C4A3009EB5F6 /* ResponseDataModel.swift in Sources */,
+				47FF3D8D2A98BB51009EB5F6 /* NetworkRouter.swift in Sources */,
 				47FF3D582A98AC14009EB5F6 /* grinta.xcdatamodeld in Sources */,
+				47FF3D872A98B770009EB5F6 /* AppConfiguration.swift in Sources */,
+				47FF3D8B2A98BB40009EB5F6 /* BaseAPI.swift in Sources */,
+				47FF3D972A98DCC0009EB5F6 /* BaseRouter.swift in Sources */,
 				47FF3D522A98AC14009EB5F6 /* ViewController.swift in Sources */,
+				47FF3D932A98C338009EB5F6 /* NetworkRemoteDataSource.swift in Sources */,
 				47FF3D4E2A98AC14009EB5F6 /* AppDelegate.swift in Sources */,
+				47FF3D992A98DEC7009EB5F6 /* MatchesRepository.swift in Sources */,
 				47FF3D502A98AC14009EB5F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +684,7 @@
 		};
 		47FF3D782A98AC17009EB5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 339FDC0653379AFED4E5CA05 /* Pods-grinta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,6 +713,7 @@
 		};
 		47FF3D792A98AC17009EB5F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB377BEE5899D432267C65A /* Pods-grinta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -540,6 +742,7 @@
 		};
 		47FF3D7B2A98AC17009EB5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2048943073624426CCF63DC /* Pods-grintaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -560,6 +763,7 @@
 		};
 		47FF3D7C2A98AC17009EB5F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD84C41ED267BE5A1640664 /* Pods-grintaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,6 +784,7 @@
 		};
 		47FF3D7E2A98AC17009EB5F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 180006F12FF31268600506AD /* Pods-grinta-grintaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,6 +803,7 @@
 		};
 		47FF3D7F2A98AC17009EB5F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FCE8B1B11591B42A14FBDBF /* Pods-grinta-grintaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

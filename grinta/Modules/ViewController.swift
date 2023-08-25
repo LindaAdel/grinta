@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        MatchesRepository.shared.getLeagueMatches { data, error in
+            print("---data--\(String(describing: data))")
+        }
     }
 
 

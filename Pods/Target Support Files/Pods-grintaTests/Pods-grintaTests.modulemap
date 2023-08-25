@@ -1,0 +1,6 @@
+framework module Pods_grintaTests {
+  umbrella header "Pods-grintaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

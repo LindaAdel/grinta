@@ -1,0 +1,6 @@
+framework module Pods_grinta {
+  umbrella header "Pods-grinta-umbrella.h"
+
+  export *
+  module * { export * }
+}
