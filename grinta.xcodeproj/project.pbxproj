@@ -33,6 +33,14 @@
 		47FF3DA42A9A03C1009EB5F6 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */; };
 		47FF3DA62A9A272E009EB5F6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA52A9A272E009EB5F6 /* DateManager.swift */; };
 		47FF3DA82A9A478E009EB5F6 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA72A9A478E009EB5F6 /* AlertManager.swift */; };
+		47FF3DAA2A9A4B4E009EB5F6 /* DateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA92A9A4B4E009EB5F6 /* DateManagerTests.swift */; };
+		47FF3DAB2A9A4BCF009EB5F6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA52A9A272E009EB5F6 /* DateManager.swift */; };
+		47FF3DAF2A9A4EE5009EB5F6 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D9E2A98F816009EB5F6 /* MatchesViewModel.swift */; };
+		47FF3DB02A9A4EFC009EB5F6 /* ResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D942A98C4A3009EB5F6 /* ResponseDataModel.swift */; };
+		47FF3DB12A9A4F64009EB5F6 /* MatchesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D982A98DEC7009EB5F6 /* MatchesRepository.swift */; };
+		47FF3DB42A9A50EB009EB5F6 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DB32A9A50EB009EB5F6 /* APIError.swift */; };
+		47FF3DB52A9A50FD009EB5F6 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DB32A9A50EB009EB5F6 /* APIError.swift */; };
+		47FF3DB62A9A5155009EB5F6 /* NetworkRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D922A98C338009EB5F6 /* NetworkRemoteDataSource.swift */; };
 		549C55C2B32C1B1FBE9E4367 /* Pods_grinta_grintaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +94,8 @@
 		47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		47FF3DA52A9A272E009EB5F6 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		47FF3DA72A9A478E009EB5F6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		47FF3DA92A9A4B4E009EB5F6 /* DateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManagerTests.swift; sourceTree = "<group>"; };
+		47FF3DB32A9A50EB009EB5F6 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grinta_grintaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2048943073624426CCF63DC /* Pods-grintaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grintaTests.debug.xcconfig"; path = "Target Support Files/Pods-grintaTests/Pods-grintaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B520EB586E905B26DD518079 /* Pods_grintaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grintaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				47FF3D672A98AC17009EB5F6 /* grintaTests.swift */,
+				47FF3DA92A9A4B4E009EB5F6 /* DateManagerTests.swift */,
 			);
 			path = grintaTests;
 			sourceTree = "<group>";
@@ -276,6 +287,7 @@
 		47FF3DA02A994190009EB5F6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				47FF3DB22A9A50D7009EB5F6 /* Enums */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -298,6 +310,14 @@
 				47FF3D9E2A98F816009EB5F6 /* MatchesViewModel.swift */,
 			);
 			path = MatchesListView;
+			sourceTree = "<group>";
+		};
+		47FF3DB22A9A50D7009EB5F6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				47FF3DB32A9A50EB009EB5F6 /* APIError.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +567,7 @@
 				47FF3D8D2A98BB51009EB5F6 /* NetworkRouter.swift in Sources */,
 				47FF3D9D2A98ECE6009EB5F6 /* MatchesTableViewCell.swift in Sources */,
 				47FF3D9F2A98F816009EB5F6 /* MatchesViewModel.swift in Sources */,
+				47FF3DB42A9A50EB009EB5F6 /* APIError.swift in Sources */,
 				47FF3DA82A9A478E009EB5F6 /* AlertManager.swift in Sources */,
 				47FF3DA62A9A272E009EB5F6 /* DateManager.swift in Sources */,
 				47FF3D582A98AC14009EB5F6 /* grinta.xcdatamodeld in Sources */,
@@ -565,6 +586,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				47FF3D682A98AC17009EB5F6 /* grintaTests.swift in Sources */,
+				47FF3DAF2A9A4EE5009EB5F6 /* MatchesViewModel.swift in Sources */,
+				47FF3DB02A9A4EFC009EB5F6 /* ResponseDataModel.swift in Sources */,
+				47FF3DAB2A9A4BCF009EB5F6 /* DateManager.swift in Sources */,
+				47FF3DB52A9A50FD009EB5F6 /* APIError.swift in Sources */,
+				47FF3DB62A9A5155009EB5F6 /* NetworkRemoteDataSource.swift in Sources */,
+				47FF3DAA2A9A4B4E009EB5F6 /* DateManagerTests.swift in Sources */,
+				47FF3DB12A9A4F64009EB5F6 /* MatchesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
