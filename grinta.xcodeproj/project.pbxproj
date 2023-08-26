@@ -31,6 +31,8 @@
 		47FF3D9D2A98ECE6009EB5F6 /* MatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D9C2A98ECE6009EB5F6 /* MatchesTableViewCell.swift */; };
 		47FF3D9F2A98F816009EB5F6 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D9E2A98F816009EB5F6 /* MatchesViewModel.swift */; };
 		47FF3DA42A9A03C1009EB5F6 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */; };
+		47FF3DA62A9A272E009EB5F6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA52A9A272E009EB5F6 /* DateManager.swift */; };
+		47FF3DA82A9A478E009EB5F6 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA72A9A478E009EB5F6 /* AlertManager.swift */; };
 		549C55C2B32C1B1FBE9E4367 /* Pods_grinta_grintaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		47FF3D9C2A98ECE6009EB5F6 /* MatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewCell.swift; sourceTree = "<group>"; };
 		47FF3D9E2A98F816009EB5F6 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
 		47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		47FF3DA52A9A272E009EB5F6 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		47FF3DA72A9A478E009EB5F6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grinta_grintaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2048943073624426CCF63DC /* Pods-grintaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grintaTests.debug.xcconfig"; path = "Target Support Files/Pods-grintaTests/Pods-grintaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B520EB586E905B26DD518079 /* Pods_grintaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grintaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +267,8 @@
 			children = (
 				47FF3D902A98BD69009EB5F6 /* NetworkManager.swift */,
 				47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */,
+				47FF3DA52A9A272E009EB5F6 /* DateManager.swift */,
+				47FF3DA72A9A478E009EB5F6 /* AlertManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -541,6 +547,8 @@
 				47FF3D8D2A98BB51009EB5F6 /* NetworkRouter.swift in Sources */,
 				47FF3D9D2A98ECE6009EB5F6 /* MatchesTableViewCell.swift in Sources */,
 				47FF3D9F2A98F816009EB5F6 /* MatchesViewModel.swift in Sources */,
+				47FF3DA82A9A478E009EB5F6 /* AlertManager.swift in Sources */,
+				47FF3DA62A9A272E009EB5F6 /* DateManager.swift in Sources */,
 				47FF3D582A98AC14009EB5F6 /* grinta.xcdatamodeld in Sources */,
 				47FF3D872A98B770009EB5F6 /* AppConfiguration.swift in Sources */,
 				47FF3D8B2A98BB40009EB5F6 /* BaseAPI.swift in Sources */,

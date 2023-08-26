@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class BaseAPI {
-    func request<T: Decodable>(request: URLRequestConvertible, responseType: T.Type, isRequestRequireAuthorization: Bool = true, showDefaultErrorSnackbar: Bool, completion: @escaping ((T?, APIError?) -> ())) {
+    func request<T: Decodable>(request: URLRequestConvertible, responseType: T.Type, isRequestRequireAuthorization: Bool = true, showDefaultAlertError: Bool, completion: @escaping ((T?, APIError?) -> ())) {
         
         guard NetworkManager.IS_CONNECTED_TO_INTERNET else {
             NotificationCenter.default.post(
@@ -19,21 +19,17 @@ class BaseAPI {
             completion(nil, APIError.connectionError)
             return
         }
-        var unAuthenticated = false
         AF.request(request).validate().responseDecodable(of: T.self, queue: .main) { afResponse in
             
             var returnedError: APIError?
             var returnedResponse: T?
-            print("************************************************************")
-            print("======================= result ================================")
-            print(afResponse.result)
             switch afResponse.result {
                 
             case .failure(_):
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NetworkMessage"), object: returnedError?.message)
                 if let httpResponse = afResponse.response {
                     returnedError = self.handleAPIError(httpResponse: httpResponse, responseData: afResponse.data)
-                    if showDefaultErrorSnackbar {
+                    if showDefaultAlertError {
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NetworkMessage"), object: returnedError?.message)
                         if !isRequestRequireAuthorization {
                             completion(returnedResponse, returnedError)
@@ -42,18 +38,12 @@ class BaseAPI {
                         completion(returnedResponse, returnedError)
                     }
                 }
-                print("************************************************************")
-                print("======================= ERROR ================================")
-                print(afResponse.error?.localizedDescription ?? "")
                 if let error = returnedError {
                     print(error.localizedDescription)
                 }
                 
             case .success(let value):
                 returnedResponse = value
-                print("************************************************************")
-                print("======================= returnedResponse ================================")
-                print("****", value)
                 completion(returnedResponse, returnedError)
             }
             

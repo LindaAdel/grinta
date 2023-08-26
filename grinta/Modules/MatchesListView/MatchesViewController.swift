@@ -9,6 +9,7 @@ import UIKit
 
 class MatchesViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var toggleButton: UISwitch!
     @IBOutlet weak var matchesTableView: UITableView! {
         didSet{
@@ -31,6 +32,16 @@ class MatchesViewController: UIViewController {
         matchesViewModel.fetchMatchesDataFromAPI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlert(notification:)), name: Notification.Name("NetworkMessage"), object: nil)
+
+    
+    }
+    @objc func showAlert(notification: NSNotification) {
+        if let message = notification.object as? String {
+            AlertManager.showErrorAlertWith(message: message, with: self)
+        }
+    }
     @IBAction func toggleButtonAction(_ sender: UISwitch) {
         isToggleOn = sender.isOn
         self.UpdateUI()
@@ -40,19 +51,16 @@ class MatchesViewController: UIViewController {
         matchesList = matchesViewModel.matchesData
         sections = matchesViewModel.arrangeRowWithAssociatedSectionByDate().0
         rowsBySection = matchesViewModel.arrangeRowWithAssociatedSectionByDate().1
+        self.UpdateActifityIndicatorState()
         self.UpdateUI()
     }
     
     func onFailUpdateView(){
-        let alert = UIAlertController(title: "Error", message: matchesViewModel.showError, preferredStyle: .alert)
-        let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        AlertManager.showErrorAlertWith(message: matchesViewModel.showError, with: self)
     }
     
     func scrollToFirstSectionByCurrentDate() {
-        let currentDate = self.matchesViewModel.getCurrentDate()
+        let currentDate = DateManager().getCurrentDate()
         // Find the target section index based on the current date
         var targetSectionIndex =  self.sections.firstIndex(where: { $0 >= currentDate})
         // If today's date is not found, get the next available date
@@ -71,6 +79,10 @@ class MatchesViewController: UIViewController {
             self.matchesTableView.reloadData()
             self.scrollToFirstSectionByCurrentDate()
         }
+    }
+    func UpdateActifityIndicatorState() {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.isHidden = true
     }
 }
 
@@ -111,10 +123,18 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
                     matchObject = rows[indexPath.row]
                 }
             // Populate the cell with the match data as needed
-            if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let score = matchObject?.score{
+                if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let status = matchObject?.status, let score = matchObject?.score?.winner , let utcDate = matchObject?.utcDate , let result = matchObject?.score{
                 cell.firstTeam.text = homeTeam.name
                 cell.secondTeam.text = awayTeam.name
-                cell.Score.text = score.winner
+                    let result = matchesViewModel.calculateMatchScore(with: result)
+                    if status.uppercased() == "SCHEDULED" {
+                        cell.Score.text = "\(status)"
+                        cell.result.text = "\(self.getMatchTime(utcDate: utcDate))"
+
+                    }else {
+                        cell.Score.text = "\(status):\(score)"
+                        cell.result.text = "\(result.0) : \(result.1)"
+                   }
             }
             if let id = matchObject?.id?.description , let matchObject = matchObject {
                 cell.isFavorite = DatabaseManager.shared.isItemFavorite(id: id)
@@ -137,4 +157,8 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func getMatchTime(utcDate : String) -> String{
+        let matchTime = DateManager().getScheduledMatchTimeInLocalTime(utcDate: utcDate)
+        return matchTime
+    }
 }

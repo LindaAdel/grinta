@@ -15,7 +15,7 @@ protocol NetworkRemoteDataSource {
 class NetworkAPI: BaseAPI, NetworkRemoteDataSource {
     
     func getLeagueMatches(completion: @escaping ((ResponseDataModel?,APIError?) -> Void)) {
-        request(request: NetworkRouter.getMatches, responseType: ResponseDataModel.self, showDefaultErrorSnackbar: true){ response , error in
+        request(request: NetworkRouter.getMatches, responseType: ResponseDataModel.self, showDefaultAlertError: true){ response , error in
             if let response = response {
                 completion(response,nil)
             }else {

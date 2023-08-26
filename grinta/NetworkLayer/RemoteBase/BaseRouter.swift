@@ -46,22 +46,6 @@ extension BaseRouter {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-        
-        debugRequest(urlRequest: urlRequest)
         return urlRequest
-    }
-
-    private func debugRequest(urlRequest: URLRequest) {
-        print("************************************************************")
-        print("======================= URL ================================")
-        print(urlRequest.url ?? "")
-        print()
-        print("======================= Headers ============================")
-        print(urlRequest.headers)
-        if let body = urlRequest.httpBody {
-            print("======================= Body ===========================")
-            print(String(data: body, encoding: .utf8) ?? "")
-        }
-        print("************************************************************")
     }
 }

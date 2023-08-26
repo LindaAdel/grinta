@@ -12,6 +12,7 @@ class MatchesTableViewCell: UITableViewCell {
     @IBOutlet weak var firstTeam: UILabel!
     @IBOutlet weak var secondTeam: UILabel!
     @IBOutlet weak var Score: UILabel!
+    @IBOutlet weak var result: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
     
     var isFavorite: Bool = false {

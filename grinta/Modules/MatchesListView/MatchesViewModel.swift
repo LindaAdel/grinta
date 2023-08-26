@@ -90,12 +90,27 @@ override init() {
         })
     }
     
-    func getCurrentDate() -> String {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd" // Customize the date format as per your requirements
-        let formattedDate = dateFormatter.string(from: currentDate)
-        return formattedDate
+    func calculateMatchScore(with scoreObject: ScoreDataModel) ->(Int, Int) {
+        let fullTime = scoreObject.fullTime
+        let halfTime = scoreObject.halfTime
+        let extraTime = scoreObject.extraTime
+        let penalties = scoreObject.penalties
+        
+        let homeTeamFullTimeScore = fullTime?.homeTeam ?? 0
+        let awayTeamFullTimeScore = fullTime?.awayTeam ?? 0
+        
+        let homeTeamHalfTimeScore = halfTime?.homeTeam ?? 0
+        let awayTeamHalfTimeScore = halfTime?.awayTeam ?? 0
+        
+        let homeTeamExtraTimeScore = extraTime?.homeTeam ?? 0
+        let awayTeamExtraTimeScore = extraTime?.awayTeam ?? 0
+        
+        let homeTeamPenaltiesScore = penalties?.homeTeam ?? 0
+        let awayTeamPenaltiesScore = penalties?.awayTeam ?? 0
+        
+        let homeTeamScore = homeTeamFullTimeScore + homeTeamHalfTimeScore + homeTeamExtraTimeScore + homeTeamPenaltiesScore
+        let awayTeamScore = awayTeamFullTimeScore + awayTeamHalfTimeScore + awayTeamExtraTimeScore + awayTeamPenaltiesScore
+        return (homeTeamScore, awayTeamScore)
     }
 }
 

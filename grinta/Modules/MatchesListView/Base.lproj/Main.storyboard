@@ -59,7 +59,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uw-hq-iQS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uw-hq-iQS">
                                                     <rect key="frame" x="185.66666666666666" y="19.666666666666668" width="22" height="21.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -71,7 +71,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4t-za-Xhw">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4t-za-Xhw">
                                                     <rect key="frame" x="176" y="60.666666666666664" width="41.333333333333343" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -85,21 +85,30 @@
                                                         <action selector="didTapFavouriteButton:" destination="wRI-eN-tAL" eventType="touchUpInside" id="dhT-nZ-4zC"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hh-zU-Jii">
+                                                    <rect key="frame" x="176" y="86" width="41.333333333333343" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="L4t-za-Xhw" firstAttribute="centerX" secondItem="2Uw-hq-iQS" secondAttribute="centerX" id="1KB-Jd-OaX"/>
+                                                <constraint firstItem="3hh-zU-Jii" firstAttribute="centerX" secondItem="L4t-za-Xhw" secondAttribute="centerX" id="4Hg-pI-CND"/>
                                                 <constraint firstItem="qcK-Ta-QYX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2Uw-hq-iQS" secondAttribute="trailing" constant="20" id="7f2-E6-V0h"/>
                                                 <constraint firstItem="by6-lG-ZSG" firstAttribute="top" secondItem="qcK-Ta-QYX" secondAttribute="bottom" constant="9.6666666666666714" id="Gsu-GP-AVo"/>
                                                 <constraint firstItem="2Uw-hq-iQS" firstAttribute="centerX" secondItem="RnR-A5-Kkf" secondAttribute="centerX" id="J0r-dH-Vtm"/>
                                                 <constraint firstAttribute="trailing" secondItem="by6-lG-ZSG" secondAttribute="trailing" constant="20" id="QGX-5b-SNv"/>
                                                 <constraint firstAttribute="bottom" secondItem="by6-lG-ZSG" secondAttribute="bottom" constant="23.333333333333343" id="U1V-4q-HEZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="3hh-zU-Jii" secondAttribute="bottom" constant="6" id="cSz-f9-pvS"/>
                                                 <constraint firstItem="2Uw-hq-iQS" firstAttribute="leading" secondItem="YS3-oo-Xkl" secondAttribute="trailing" constant="20" id="d9Z-gI-LjO"/>
                                                 <constraint firstItem="by6-lG-ZSG" firstAttribute="centerY" secondItem="L4t-za-Xhw" secondAttribute="centerY" id="dQP-6E-cEd"/>
                                                 <constraint firstAttribute="trailing" secondItem="qcK-Ta-QYX" secondAttribute="trailing" constant="20" id="ePm-du-ffk"/>
                                                 <constraint firstItem="qcK-Ta-QYX" firstAttribute="centerY" secondItem="2Uw-hq-iQS" secondAttribute="centerY" id="g3v-XQ-Cyq"/>
                                                 <constraint firstItem="L4t-za-Xhw" firstAttribute="top" secondItem="2Uw-hq-iQS" secondAttribute="bottom" constant="20" id="gw5-42-a1P"/>
                                                 <constraint firstItem="2Uw-hq-iQS" firstAttribute="centerY" secondItem="YS3-oo-Xkl" secondAttribute="centerY" id="l3M-XK-jVR"/>
+                                                <constraint firstItem="3hh-zU-Jii" firstAttribute="top" secondItem="L4t-za-Xhw" secondAttribute="bottom" constant="5" id="pDS-EZ-JIu"/>
                                                 <constraint firstItem="YS3-oo-Xkl" firstAttribute="leading" secondItem="RnR-A5-Kkf" secondAttribute="leading" constant="20" id="sU7-XA-O8k"/>
                                                 <constraint firstItem="YS3-oo-Xkl" firstAttribute="top" secondItem="RnR-A5-Kkf" secondAttribute="top" constant="20" id="uy4-o8-shL"/>
                                             </constraints>
@@ -109,17 +118,23 @@
                                             <outlet property="Score" destination="L4t-za-Xhw" id="jQV-Vi-h3S"/>
                                             <outlet property="favouriteButton" destination="by6-lG-ZSG" id="ooN-rl-bsa"/>
                                             <outlet property="firstTeam" destination="YS3-oo-Xkl" id="b7J-b9-cGL"/>
+                                            <outlet property="result" destination="3hh-zU-Jii" id="5fg-8C-8I9"/>
                                             <outlet property="secondTeam" destination="qcK-Ta-QYX" id="lpj-9V-Mmc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="ax1-H2-KXk">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yir-7c-DN1" secondAttribute="trailing" id="8IY-H2-DZh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Ffh-PZ-XhR" secondAttribute="top" id="Gdp-MD-v7h"/>
+                            <constraint firstItem="ax1-H2-KXk" firstAttribute="centerX" secondItem="yir-7c-DN1" secondAttribute="centerX" id="K8c-0A-D6w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yir-7c-DN1" secondAttribute="bottom" id="Kqo-pZ-7Ng"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ffh-PZ-XhR" secondAttribute="trailing" id="M9y-L5-WN8"/>
                             <constraint firstItem="Ffh-PZ-XhR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f9u-fF-qmW"/>
@@ -128,6 +143,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ax1-H2-KXk" id="65Q-18-lYf"/>
                         <outlet property="matchesTableView" destination="yir-7c-DN1" id="3aC-kd-X0K"/>
                         <outlet property="toggleButton" destination="RCf-cq-cpI" id="t2L-xg-eYm"/>
                     </connections>
