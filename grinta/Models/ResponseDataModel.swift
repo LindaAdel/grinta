@@ -10,7 +10,7 @@ import Foundation
 struct ResponseDataModel: Codable {
     var count: Int?
     var competition: CompetitionDataMode?
-    var matches: [MatchesDataMode]?
+    var matches: [MatchesDataModel]?
     
 }
 
@@ -23,7 +23,7 @@ struct CompetitionDataMode: Codable {
     var lastUpdated: String?
 }
 
-struct MatchesDataMode: Codable {
+struct MatchesDataModel: Codable {
     var id: Int?
     var season: SeasonDataModel?
     var utcDate: String?

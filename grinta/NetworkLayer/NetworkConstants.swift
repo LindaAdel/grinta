@@ -13,11 +13,6 @@ struct NetworkConstants{
     }
     
     struct HTTPHeader {
-        static let contentType = "Content-Type"
-        static let acceptType = "Accept"
-        static let authentication = "Authorization"
-        static let timeZone = "timezone"
-        static let language = "language"
         static let Token = "X-Auth-Token"
     }
     

@@ -26,12 +26,6 @@ extension BaseRouter {
        return nil
     }
     
-//    var jsonHeader: [String: String] {
-//       return [NetworkConstants.HTTPHeader.contentType: NetworkConstants.ContentType.json,
-//               NetworkConstants.HTTPHeader.timeZone: TimeZone.current.identifier,
-//               NetworkConstants.HTTPHeader.language: Locale.current.language.languageCode?.identifier ?? "en"]
-//    }
-    
     var tokenHeader: [String: String] {
         return [NetworkConstants.HTTPHeader.Token: AppConfiguration.apiKey]
     }
@@ -41,10 +35,6 @@ extension BaseRouter {
         var urlRequest = URLRequest(url: URL(string: url.appendingPathComponent(path).absoluteString.removingPercentEncoding ?? "") ?? url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
-//        for header in self.jsonHeader {
-//            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
-//        }
-
         if authorized {
             urlRequest.setValue(tokenHeader.first?.value, forHTTPHeaderField: tokenHeader.first?.key ?? "")
         }
