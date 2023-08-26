@@ -61,13 +61,15 @@ override init() {
                     if !sections.contains(sectionDate) {
                         sections.append(sectionDate)
                     }
-                    if var rows = rowsBySection[sectionDate] {
+                if var rows = rowsBySection[sectionDate] {
+                    // Check if the matchObject already exists in the rows array
+                    if !rows.contains(where: { $0.id == matchObject.id }) {
                         rows.append(matchObject)
-                        rowsBySection[sectionDate] = rows
-                    } else {
-                        rowsBySection[sectionDate] = [matchObject]
                     }
-               
+                    rowsBySection[sectionDate] = rows
+                } else {
+                    rowsBySection[sectionDate] = [matchObject]
+                }
             }
         }
         return (sections,rowsBySection)

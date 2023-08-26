@@ -160,6 +160,9 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
                 cell.Score.text = "\(status)"
                 cell.result.text = "\(self.getMatchTime(utcDate: utcDate))"
                 
+            }else if status.uppercased() == "IN_PLAY" {
+                cell.Score.text = "\(status):\(score)"
+                cell.result.text = "\(result.0) : \(result.1)"
             }else {
                 cell.Score.text = "\(status):\(score)"
                 cell.result.text = "\(result.0) : \(result.1)"
