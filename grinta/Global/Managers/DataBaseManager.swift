@@ -48,7 +48,7 @@ struct DatabaseManager {
         saveContext()
     }
     
-    func removeFavoriteItem(id: String) {
+    func removeFavoriteMatch(id: String) {
         let context = persistentContainer.viewContext
            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MatcheDataEntity")
            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
@@ -63,7 +63,7 @@ struct DatabaseManager {
            }
     }
     
-    func isItemFavorite(id: String) -> Bool {
+    func isMatchFavorite(id: String) -> Bool {
         let context = persistentContainer.viewContext
         
         let fetchRequest: NSFetchRequest<MatcheDataEntity> = MatcheDataEntity.fetchRequest()

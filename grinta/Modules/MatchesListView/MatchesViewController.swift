@@ -9,6 +9,7 @@ import UIKit
 
 class MatchesViewController: UIViewController {
     
+    //MARK: - @IBOutlet
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var toggleButton: UISwitch!
     @IBOutlet weak var matchesTableView: UITableView! {
@@ -18,12 +19,14 @@ class MatchesViewController: UIViewController {
         }
     }
     
+    //MARK: - @variables
     var isToggleOn: Bool = false
     var sections: [String] = []
     var rowsBySection: [String: [MatchesDataModel]] = [:]
     var matchesList = [MatchesDataModel]()
     let matchesViewModel = MatchesViewModel()
     
+    //MARK: - @Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleButton.isOn = isToggleOn
@@ -37,16 +40,20 @@ class MatchesViewController: UIViewController {
 
     
     }
-    @objc func showAlert(notification: NSNotification) {
-        if let message = notification.object as? String {
-            AlertManager.showErrorAlertWith(message: message, with: self)
-        }
-    }
+    
+    //MARK: - @IBAction
     @IBAction func toggleButtonAction(_ sender: UISwitch) {
         isToggleOn = sender.isOn
         self.UpdateUI()
     }
     
+    @objc func showAlert(notification: NSNotification) {
+        if let message = notification.object as? String {
+            AlertManager.showErrorAlertWith(message: message, with: self)
+        }
+    }
+  
+    //MARK: - @functions
     func onSuccessUpdateView(){
         matchesList = matchesViewModel.matchesData
         sections = matchesViewModel.arrangeRowWithAssociatedSectionByDate().0
@@ -101,7 +108,7 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
         let sectionDate = sections[section]
             if isToggleOn {
                 let favoritedRows = rowsBySection[sectionDate]?.filter { match in
-                    return DatabaseManager.shared.isItemFavorite(id: match.id?.description ?? "")
+                    return DatabaseManager.shared.isMatchFavorite(id: match.id?.description ?? "")
                 }
                 return favoritedRows?.count ?? 0
             } else {
@@ -116,41 +123,22 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
             if let rows = rowsBySection[sectionDate] {
                 if isToggleOn {
                     let favoritedRows = rows.filter { match in
-                        return DatabaseManager.shared.isItemFavorite(id: match.id?.description ?? "")
+                        return DatabaseManager.shared.isMatchFavorite(id: match.id?.description ?? "")
                     }
                     matchObject = favoritedRows[indexPath.row]
                 } else {
                     matchObject = rows[indexPath.row]
                 }
-            // Populate the cell with the match data as needed
-                if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let status = matchObject?.status, let score = matchObject?.score?.winner , let utcDate = matchObject?.utcDate , let result = matchObject?.score{
-                cell.firstTeam.text = homeTeam.name
-                cell.secondTeam.text = awayTeam.name
-                    let result = matchesViewModel.calculateMatchScore(with: result)
-                    if status.uppercased() == "SCHEDULED" {
-                        cell.Score.text = "\(status)"
-                        cell.result.text = "\(self.getMatchTime(utcDate: utcDate))"
-
-                    }else {
-                        cell.Score.text = "\(status):\(score)"
-                        cell.result.text = "\(result.0) : \(result.1)"
-                   }
-            }
-            if let id = matchObject?.id?.description , let matchObject = matchObject {
-                cell.isFavorite = DatabaseManager.shared.isItemFavorite(id: id)
-                // Set up the favorite button tap callback
-                cell.didTapFavouriteButton = { [weak self] in
-                    self?.toggleFavoriteStatus(for: matchObject)
-                }
-            }
+                self.setCellInformation(in: cell, with: matchObject)
+                self.handleAddingFavouriteMatch(from: cell, with: matchObject)
         }
         return cell
     }
     
     func toggleFavoriteStatus(for match: MatchesDataModel) {
         if let id = match.id?.description {
-            if DatabaseManager.shared.isItemFavorite(id: id) {
-                DatabaseManager.shared.removeFavoriteItem(id: id)
+            if DatabaseManager.shared.isMatchFavorite(id: id) {
+                DatabaseManager.shared.removeFavoriteMatch(id: id)
             } else {
                 DatabaseManager.shared.addFavoriteMatch(with: match)
             }
@@ -160,5 +148,33 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
     func getMatchTime(utcDate : String) -> String{
         let matchTime = DateManager().getScheduledMatchTimeInLocalTime(utcDate: utcDate)
         return matchTime
+    }
+    
+    // Populate the cell with the match data as needed
+    func setCellInformation(in cell:MatchesTableViewCell ,with matchObject: MatchesDataModel?) {
+        if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let status = matchObject?.status, let score = matchObject?.score?.winner , let utcDate = matchObject?.utcDate , let result = matchObject?.score{
+            cell.firstTeam.text = homeTeam.name
+            cell.secondTeam.text = awayTeam.name
+            let result = matchesViewModel.calculateMatchScore(with: result)
+            if status.uppercased() == "SCHEDULED" {
+                cell.Score.text = "\(status)"
+                cell.result.text = "\(self.getMatchTime(utcDate: utcDate))"
+                
+            }else {
+                cell.Score.text = "\(status):\(score)"
+                cell.result.text = "\(result.0) : \(result.1)"
+            }
+        }
+    }
+    
+    // handle favouriting match object
+    func handleAddingFavouriteMatch(from cell:MatchesTableViewCell ,with matchObject: MatchesDataModel?) {
+        if let id = matchObject?.id?.description , let matchObject = matchObject {
+            cell.isFavorite = DatabaseManager.shared.isMatchFavorite(id: id)
+            // Set up the favorite button tap callback
+            cell.didTapFavouriteButton = { [weak self] in
+                self?.toggleFavoriteStatus(for: matchObject)
+            }
+        }
     }
 }
