@@ -25,6 +25,16 @@ class DateManager {
         return formatDate(date: currentDate, format: "yyyy-MM-dd")
     }
     
+    func getScheduledMatchDate(utcDate: String) -> String {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        if let utcDate = dateFormatter.date(from: utcDate) {
+            return formatDate(date: utcDate, format: "yyyy-MM-dd")
+        }
+        
+        return ""
+    }
+    
     func getScheduledMatchTimeInLocalTime(utcDate: String) -> String {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")

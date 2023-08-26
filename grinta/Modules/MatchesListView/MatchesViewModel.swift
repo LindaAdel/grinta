@@ -57,12 +57,7 @@ override init() {
     func arrangeRowWithAssociatedSectionByDate() ->([String],[String: [MatchesDataModel]]){
         for matchObject in matchesData {
             if let utcDate = matchObject.utcDate {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-                if let date = dateFormatter.date(from: utcDate) {
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    let sectionDate = dateFormatter.string(from: date)
-                    
+               let sectionDate = DateManager().getScheduledMatchDate(utcDate: utcDate)
                     if !sections.contains(sectionDate) {
                         sections.append(sectionDate)
                     }
@@ -72,7 +67,7 @@ override init() {
                     } else {
                         rowsBySection[sectionDate] = [matchObject]
                     }
-                }
+               
             }
         }
         return (sections,rowsBySection)
