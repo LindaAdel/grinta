@@ -30,6 +30,7 @@
 		47FF3D9B2A98E676009EB5F6 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D9A2A98E676009EB5F6 /* MatchesViewController.swift */; };
 		47FF3D9D2A98ECE6009EB5F6 /* MatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D9C2A98ECE6009EB5F6 /* MatchesTableViewCell.swift */; };
 		47FF3D9F2A98F816009EB5F6 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3D9E2A98F816009EB5F6 /* MatchesViewModel.swift */; };
+		47FF3DA42A9A03C1009EB5F6 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */; };
 		549C55C2B32C1B1FBE9E4367 /* Pods_grinta_grintaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		47FF3D9A2A98E676009EB5F6 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		47FF3D9C2A98ECE6009EB5F6 /* MatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewCell.swift; sourceTree = "<group>"; };
 		47FF3D9E2A98F816009EB5F6 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
+		47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		9FC12E648BF4089A67BC43DF /* Pods_grinta_grintaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grinta_grintaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2048943073624426CCF63DC /* Pods-grintaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grintaTests.debug.xcconfig"; path = "Target Support Files/Pods-grintaTests/Pods-grintaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B520EB586E905B26DD518079 /* Pods_grintaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grintaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				47FF3D902A98BD69009EB5F6 /* NetworkManager.swift */,
+				47FF3DA32A9A03C1009EB5F6 /* DataBaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FF3DA42A9A03C1009EB5F6 /* DataBaseManager.swift in Sources */,
 				47FF3D9B2A98E676009EB5F6 /* MatchesViewController.swift in Sources */,
 				47FF3D912A98BD69009EB5F6 /* NetworkManager.swift in Sources */,
 				47FF3D892A98B8E4009EB5F6 /* NetworkConstants.swift in Sources */,

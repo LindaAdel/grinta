@@ -16,6 +16,7 @@ class MatchesViewController: UIViewController {
             matchesTableView.dataSource = self
         }
     }
+    
     var sections: [String] = []
     var rowsBySection: [String: [MatchesDataModel]] = [:]
     var matchesList = [MatchesDataModel]()
@@ -34,7 +35,6 @@ class MatchesViewController: UIViewController {
         rowsBySection = matchesViewModel.arrangeRowWithAssociatedSectionByDate().1
         self.UpdateUI()
     }
-    
     
     func onFailUpdateView(){
         let alert = UIAlertController(title: "Error", message: matchesViewModel.showError, preferredStyle: .alert)
@@ -87,14 +87,30 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
         if let rows = rowsBySection[sectionDate] {
             let matchObject = rows[indexPath.row]
             // Populate the cell with the match data as needed
-            if let homeTeam = matchObject.homeTeam , let awayTeam = matchObject.awayTeam {
+            if let homeTeam = matchObject.homeTeam , let awayTeam = matchObject.awayTeam , let score = matchObject.score{
                 cell.firstTeam.text = homeTeam.name
                 cell.secondTeam.text = awayTeam.name
+                cell.Score.text = score.winner
+            }
+            if let id = matchObject.id?.description {
+                cell.isFavorite = DatabaseManager.shared.isItemFavorite(id: id)
+                // Set up the favorite button tap callback
+                cell.didTapFavouriteButton = { [weak self] in
+                    self?.toggleFavoriteStatus(for: matchObject)
+                }
             }
         }
         return cell
     }
     
-    
+    func toggleFavoriteStatus(for match: MatchesDataModel) {
+        if let id = match.id?.description {
+            if DatabaseManager.shared.isItemFavorite(id: id) {
+                DatabaseManager.shared.removeFavoriteItem(id: id)
+            } else {
+                DatabaseManager.shared.addFavoriteMatch(with: match)
+            }
+        }
+    }
     
 }
