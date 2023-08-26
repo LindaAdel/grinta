@@ -17,6 +17,7 @@ class MatchesViewController: UIViewController {
         }
     }
     
+    var isToggleOn: Bool = false
     var sections: [String] = []
     var rowsBySection: [String: [MatchesDataModel]] = [:]
     var matchesList = [MatchesDataModel]()
@@ -24,9 +25,15 @@ class MatchesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toggleButton.isOn = isToggleOn
         matchesViewModel.bindMatchesViewModelToView =  onSuccessUpdateView
         matchesViewModel.bindViewModelErrorToView = onFailUpdateView
         matchesViewModel.fetchMatchesDataFromAPI()
+    }
+    
+    @IBAction func toggleButtonAction(_ sender: UISwitch) {
+        isToggleOn = sender.isOn
+        self.UpdateUI()
     }
     
     func onSuccessUpdateView(){
@@ -72,27 +79,44 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //get the name of the section
         return sections[section]
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionDate = sections[section]
-        return rowsBySection[sectionDate]?.count ?? 0
+            if isToggleOn {
+                let favoritedRows = rowsBySection[sectionDate]?.filter { match in
+                    return DatabaseManager.shared.isItemFavorite(id: match.id?.description ?? "")
+                }
+                return favoritedRows?.count ?? 0
+            } else {
+                return rowsBySection[sectionDate]?.count ?? 0
+            }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchesTableViewCell", for: indexPath) as! MatchesTableViewCell
         let sectionDate = sections[indexPath.section]
-        if let rows = rowsBySection[sectionDate] {
-            let matchObject = rows[indexPath.row]
+        var matchObject: MatchesDataModel?
+            if let rows = rowsBySection[sectionDate] {
+                if isToggleOn {
+                    let favoritedRows = rows.filter { match in
+                        return DatabaseManager.shared.isItemFavorite(id: match.id?.description ?? "")
+                    }
+                    matchObject = favoritedRows[indexPath.row]
+                } else {
+                    matchObject = rows[indexPath.row]
+                }
             // Populate the cell with the match data as needed
-            if let homeTeam = matchObject.homeTeam , let awayTeam = matchObject.awayTeam , let score = matchObject.score{
+            if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let score = matchObject?.score{
                 cell.firstTeam.text = homeTeam.name
                 cell.secondTeam.text = awayTeam.name
                 cell.Score.text = score.winner
             }
-            if let id = matchObject.id?.description {
+            if let id = matchObject?.id?.description , let matchObject = matchObject {
                 cell.isFavorite = DatabaseManager.shared.isItemFavorite(id: id)
                 // Set up the favorite button tap callback
                 cell.didTapFavouriteButton = { [weak self] in
