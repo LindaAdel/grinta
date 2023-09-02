@@ -152,20 +152,29 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
     
     // Populate the cell with the match data as needed
     func setCellInformation(in cell:MatchesTableViewCell ,with matchObject: MatchesDataModel?) {
-        if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let status = matchObject?.status, let score = matchObject?.score?.winner , let utcDate = matchObject?.utcDate , let result = matchObject?.score{
+        if let homeTeam = matchObject?.homeTeam , let awayTeam = matchObject?.awayTeam , let utcDate = matchObject?.utcDate ,let status = matchObject?.status
+        {
             cell.firstTeam.text = homeTeam.name
             cell.secondTeam.text = awayTeam.name
-            let result = matchesViewModel.calculateMatchScore(with: result)
+
             if status.uppercased() == "SCHEDULED" {
                 cell.Score.text = "\(status)"
                 cell.result.text = "\(self.getMatchTime(utcDate: utcDate))"
                 
             }else if status.uppercased() == "IN_PLAY" {
-                cell.Score.text = "\(status):\(score)"
-                cell.result.text = "\(result.0) : \(result.1)"
+                if let score = matchObject?.score?.winner {
+                    cell.Score.text = "\(status):\(score)"
+                }
+                if let result = matchObject?.score {
+                    let result = matchesViewModel.calculateMatchScore(with: result)
+                    cell.result.text = "\(result.0) : \(result.1)"}
             }else {
-                cell.Score.text = "\(status):\(score)"
-                cell.result.text = "\(result.0) : \(result.1)"
+                if let score = matchObject?.score?.winner {
+                    cell.Score.text = "\(status):\(score)"
+                }
+                if let result = matchObject?.score {
+                    let result = matchesViewModel.calculateMatchScore(with: result)
+                    cell.result.text = "\(result.0) : \(result.1)"}
             }
         }
     }
