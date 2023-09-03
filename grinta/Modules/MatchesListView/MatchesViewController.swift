@@ -159,7 +159,7 @@ extension MatchesViewController :UITableViewDelegate, UITableViewDataSource {
 
             if status.uppercased() == "SCHEDULED" {
                 cell.Score.text = "\(status)"
-                cell.result.text = "\(self.getMatchTime(utcDate: utcDate))"
+                cell.result.text = "\(self.getMatchTime(utcDate: utcDate))  \(DateManager.currentTimeZone ?? "")"
                 
             }else if status.uppercased() == "IN_PLAY" {
                 if let score = matchObject?.score?.winner {

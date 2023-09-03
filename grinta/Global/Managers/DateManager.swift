@@ -8,6 +8,7 @@
 import Foundation
 
 class DateManager {
+    static let currentTimeZone = TimeZone.current.description.components(separatedBy: " ").first
     private let dateFormatter: DateFormatter
     
     init() {
@@ -37,10 +38,11 @@ class DateManager {
     
     func getScheduledMatchTimeInLocalTime(utcDate: String) -> String {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        
-        if let utcDate = dateFormatter.date(from: utcDate) {
-            return formatDate(date: utcDate, format: "HH:mm")
+        let currentTimeZone = TimeZone.current.description
+        dateFormatter.timeZone = TimeZone(identifier: currentTimeZone)
+       
+        if let convertedDate = dateFormatter.date(from: utcDate) {
+            return formatDate(date: convertedDate, format: "HH:mm")
         }
         
         return ""
